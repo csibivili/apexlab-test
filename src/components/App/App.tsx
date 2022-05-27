@@ -1,9 +1,13 @@
-import { Box, Typography, CssBaseline, ThemeProvider } from '@mui/material'
+import { useState } from 'react'
+import { Box, Container, CssBaseline, ThemeProvider, TextField, Button } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
+
 import Footer from '../Footer'
 import Navbar from '../Navbar'
 
 function App() {
+  const [search, setSearch] = useState('')
+
   const theme = createTheme({
     palette: {
       primary: {
@@ -32,13 +36,19 @@ function App() {
             flexGrow: 1,
             backgroundColor: 'primary.light',
             display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
           }}
         >
-          <Typography color="secondary.main" variant="h1">
-            Starter App
-          </Typography>
+          <Container maxWidth="xl" sx={{ paddingTop: 4 }}>
+            <TextField
+              label="movie title"
+              variant="filled"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <Button variant="contained" sx={{ padding: 2, ml: 1 }}>
+              Search
+            </Button>
+          </Container>
         </Box>
         <Footer />
       </Box>

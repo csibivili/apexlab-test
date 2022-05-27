@@ -12,7 +12,7 @@ export const Footer: FC = (): ReactElement => {
         paddingBottom: '1rem',
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container direction="column" alignItems="center">
           <Grid item xs={12}>
             <Typography color="primary.dark" variant="h5">
