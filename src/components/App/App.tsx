@@ -1,20 +1,22 @@
-import { Box, Paper, Typography, CssBaseline, ThemeProvider } from '@mui/material'
+import { Box, Typography, CssBaseline, ThemeProvider } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
+import Footer from '../Footer'
+import Navbar from '../Navbar'
 
 function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#AB46D2',
-        light: '#d14684',
-        dark: '#4655d1',
-        contrastText: '#55D8C1',
+        main: '#EEEDDE',
+        light: '#eedde7',
+        dark: '#ddeee5',
+        contrastText: '#141E27',
       },
       secondary: {
-        main: '#FF6FB5',
-        light: '#d06fff',
-        dark: '#ffa16f',
-        contrastText: '#FCF69C',
+        main: '#203239',
+        light: '#253820',
+        dark: '#332038',
+        contrastText: '#141E27',
       },
     },
   })
@@ -23,12 +25,22 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <Box height="100vh" display="flex" justifyContent="center" alignItems="center" flexDirection="column">
-        <Paper elevation={3} sx={{ padding: '1rem', backgroundColor: 'primary.dark' }}>
+      <Box height="100vh" display="flex" flexDirection="column">
+        <Navbar />
+        <Box
+          sx={{
+            flexGrow: 1,
+            backgroundColor: 'primary.light',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <Typography color="secondary.main" variant="h1">
             Starter App
           </Typography>
-        </Paper>
+        </Box>
+        <Footer />
       </Box>
     </ThemeProvider>
   )
